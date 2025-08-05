@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://votre-domaine.com/sitemap.xml
+
+# Optimisation pour les moteurs de recherche
+Disallow: /css/
+Disallow: /js/
+Disallow: /fonts/
+Disallow: /scss/
+
+# Autoriser l'indexation des images
+Allow: /images/ 
