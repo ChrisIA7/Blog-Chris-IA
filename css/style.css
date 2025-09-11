@@ -10066,7 +10066,13 @@ textarea {
     line-height: 1.5; }
   .blog-entries .blog-entry p {
     font-size: 13px;
-    color: gray; }
+    color: #000; }
+
+.article-content p,
+.article-content li,
+.article-content td,
+.article-content th {
+  color: #000 !important; }
 
 .blog-entries .post-meta {
   font-size: 14px;
