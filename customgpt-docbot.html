@@ -38,6 +38,353 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      body {
+        font-family: 'Work Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+      
+      .site-nav {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 15px 0;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      .logo {
+        color: #2c3e50 !important;
+        font-weight: 700;
+        font-size: 1.5em;
+        text-decoration: none;
+      }
+      
+      .text-primary {
+        color: #667eea !important;
+      }
+      
+      .article-container {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        margin: 20px 0;
+      }
+      
+      .article-header {
+        text-align: center;
+        margin-bottom: 40px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 30px;
+      }
+      
+      .date {
+        color: #667eea;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 25px;
+        font-size: 0.9em;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+      
+      h1 {
+        color: #2c3e50;
+        font-size: 2.8em;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+      }
+      
+      .post-meta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        color: #666;
+        margin-top: 20px;
+      }
+      
+      .author-figure {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #667eea;
+        margin: 0;
+      }
+      
+      .author-figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .hero-image {
+        text-align: center;
+        margin: 40px 0;
+      }
+      
+      .hero-image img {
+        width: 100%;
+        max-width: 800px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      }
+      
+      .article-content {
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #555;
+      }
+      
+      .lead {
+        font-size: 1.3em;
+        color: #2c3e50;
+        font-weight: 500;
+        margin-bottom: 30px;
+        padding: 25px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 10px;
+        border-left: 5px solid #667eea;
+      }
+      
+      h2 {
+        color: #2c3e50;
+        font-size: 1.8em;
+        margin: 40px 0 20px 0;
+        font-weight: 600;
+        position: relative;
+        padding-left: 20px;
+      }
+      
+      h2:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 30px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 2px;
+      }
+      
+      h3 {
+        color: #34495e;
+        font-size: 1.4em;
+        margin: 30px 0 15px 0;
+        font-weight: 600;
+      }
+      
+      p {
+        margin-bottom: 20px;
+      }
+      
+      ul {
+        background: #f8f9fa;
+        padding: 25px 30px;
+        border-radius: 10px;
+        border-left: 4px solid #3498db;
+        margin: 25px 0;
+      }
+      
+      ul li {
+        margin: 12px 0;
+        color: #555;
+        font-weight: 500;
+      }
+      
+      ul li:before {
+        content: '✓';
+        color: #27ae60;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      
+      .alert {
+        padding: 20px 25px;
+        border-radius: 10px;
+        margin: 25px 0;
+        font-weight: 500;
+      }
+      
+      .alert-info {
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        border: 2px solid #2196f3;
+        color: #1565c0;
+      }
+      
+      .cta-section {
+        background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+        color: white;
+        padding: 40px;
+        border-radius: 15px;
+        margin: 40px 0;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(39, 174, 96, 0.3);
+      }
+      
+      .cta-section h3 {
+        color: white;
+        margin-bottom: 25px;
+        font-size: 2em;
+      }
+      
+      .cta-section .lead {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+      
+      .btn {
+        display: inline-block;
+        padding: 15px 35px;
+        background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.1em;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        color: white;
+        text-decoration: none;
+      }
+      
+      .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .btn-primary:hover {
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+      }
+      
+      .btn-outline-primary {
+        background: transparent;
+        border: 2px solid #667eea;
+        color: #667eea;
+      }
+      
+      .btn-outline-primary:hover {
+        background: #667eea;
+        color: white;
+      }
+      
+      .site-footer {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 30px 0;
+        border-radius: 15px;
+        margin-top: 40px;
+        text-align: center;
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+      }
+      
+      .emoji {
+        font-size: 1.2em;
+        margin-right: 8px;
+      }
+      
+      a {
+        color: #667eea;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      
+      a:hover {
+        color: #5a67d8;
+        text-decoration: underline;
+      }
+      
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+      
+      .col-6 {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      
+      .text-end {
+        text-align: right !important;
+      }
+      
+      .mt-5 {
+        margin-top: 3rem !important;
+      }
+      
+      .pt-5 {
+        padding-top: 3rem !important;
+      }
+      
+      .border-top {
+        border-top: 1px solid #dee2e6 !important;
+      }
+      
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+        
+        .article-container {
+          padding: 20px;
+        }
+        
+        h1 {
+          font-size: 2.2em;
+        }
+        
+        .post-meta {
+          flex-direction: column;
+          gap: 10px;
+        }
+        
+        .cta-section {
+          padding: 25px;
+        }
+        
+        .cta-section h3 {
+          font-size: 1.5em;
+        }
+        
+        .col-6 {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+    </style>
 </head>
 
 <body>
@@ -52,114 +399,125 @@
 
     <nav class="site-nav">
         <div class="container">
-            <div class="menu-bg-wrap">
-                <div class="site-navigation">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-2">
-                            <a href="index.html" class="logo m-0 float-start">Les Outils IA de Chris<span class="text-primary">.</span></a>
-                        </div>
-                        <div class="col-8 text-center">
-                            <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
-                                <li class="active"><a href="index.html">Accueil</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-2 text-end">
-                            <a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
-                                <span></span>
-                            </a>
-                        </div>
-                    </div>
+            <div class="row g-0 align-items-center">
+                <div class="col-2">
+                    <a href="index.html" class="logo">Les Outils IA de Chris<span class="text-primary">.</span></a>
                 </div>
+                <div class="col-8 text-center">
+                    <ul style="list-style: none; margin: 0; padding: 0; display: inline-block;">
+                        <li style="display: inline-block;"><a href="index.html" style="padding: 0 20px; font-weight: 600;">Accueil</a></li>
+                    </ul>
+                </div>
+                <div class="col-2"></div>
             </div>
         </div>
     </nav>
-	<!-- Article Content -->
-	<section class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 mx-auto">
+	<div class="container">
+		<div class="article-container">
 
-					<span class="date">Août 5, 2025</span>
-					<h1 class="mb-4">CustomGPT.ai : Le chatbot IA qui lit vos documents PDF (et rien d’autre)</h1>
-
-					<img src="images/image-general-ia/AI-SAAS-1.png" alt="Interface CustomGPT.ai - Chatbot IA" class="img-fluid mb-4" loading="lazy">
-
-					<p class="lead">
-						Tu veux un assistant IA intelligent mais 100% fiable, qui ne part pas dans tous les sens ? CustomGPT est peut-être l’outil le plus sous-coté du marché.
-					</p>
-
-					<h2>✅ Une réponse basée uniquement sur tes documents</h2>
-					<p>
-						Contrairement à ChatGPT qui répond à partir de tout l’Internet, CustomGPT se base uniquement sur les données que tu lui donnes : PDFs, URLs, pages HTML, etc.
-					</p>
-					<p>
-						Tu veux qu’il lise une notice produit, un contrat ou un guide utilisateur et réponde uniquement à partir de ça ? C’est exactement ce qu’il fait.
-					</p>
-
-					<h2>🎯 Cas d’usage concret : FAQ client automatisée</h2>
-					<p>
-						Imagine : tu déposes ton guide utilisateur (PDF), ton chatbot répond à toutes les questions des clients. Zéro hallucination, zéro mauvaise réponse.
-					</p>
-					<p>
-						Et mieux encore : tu peux l’intégrer sur ton site ou en widget dans une FAQ.
-					</p>
-
-					<h2>🧰 Fonctionnalités puissantes</h2>
-					<ul>
-						<li>Import direct de fichiers PDF, .docx ou URL</li>
-						<li>Interface personnalisable (logo, couleurs, etc.)</li>
-						<li>Historique de chat et analytics</li>
-						<li>Prêt à être embarqué sur ton site ou Notion</li>
-					</ul>
-
-					<h2>💡 Mon avis</h2>
-					<p>
-						Si tu cherches un assistant fiable, sans hallucination, pour automatiser du support, de la documentation ou même de la formation interne, CustomGPT est un bijou.
-					</p>
-
-					<div class="alert alert-info">
-						<strong>💬 À tester :</strong> Tu peux créer un chatbot gratuitement avec 1 projet test. Va sur <a href="https://www.customgpt.ai" target="_blank">customgpt.ai</a>.
-					</div>
-
-					<!-- Bloc CTA optimisé SEO -->
-					<div class="cta-section bg-light p-5 rounded-3 my-5">
-						<div class="text-center">
-							<h3 class="mb-4 text-primary">🎯 Enfin un chatbot IA qui ne dit que la vérité !</h3>
-							<p class="lead mb-4">
-								Fini les réponses hallucinées ! CustomGPT.ai crée un assistant IA qui répond uniquement à partir de tes documents, garantissant une précision à 100% et une fiabilité totale pour ton entreprise.
-							</p>
-							<p class="mb-4">
-								Transforme tes PDF, guides utilisateur et documentation en chatbot intelligent qui automatise ton support client et booste ta productivité sans risque d'erreur.
-							</p>
-							<div class="d-grid gap-2 d-md-block">
-								<a href="https://customgpt.ai/demo/?fpr=chris_ai" 
-								   target="_blank" 
-								   rel="nofollow" 
-								   class="btn btn-primary btn-lg px-5 py-3">
-									<i class="bi bi-shield-check me-2"></i>
-									Essayer CustomGPT.ai gratuitement
-								</a>
-							</div>
-							<p class="text-muted mt-3 small">
-								🛡️ 100% fiable • ⚡ Test gratuit • 🎯 IA spécialisée • 🚀 Automatisation garantie
-							</p>
-						</div>
-					</div>
-
-					<!-- Navigation -->
-					<div class="row mt-5 pt-5 border-top">
-						<div class="col-6">
-							<a href="#" class="btn btn-outline-primary">&larr; Article précédent</a>
-						</div>
-						<div class="col-6 text-end">
-							<a href="#" class="btn btn-outline-primary">Article suivant &rarr;</a>
-						</div>
-					</div>
-
+			<!-- En-tête de l'article -->
+			<div class="article-header">
+				<span class="date">Août 5, 2025</span>
+				<h1>CustomGPT.ai : Le chatbot IA qui lit vos documents PDF (et rien d'autre)</h1>
+				<div class="post-meta">
+					<figure class="author-figure">
+						<img src="https://via.placeholder.com/50x50/667eea/ffffff?text=C" alt="Auteur Chris">
+					</figure>
+					<span>Par <a href="#">Chris</a></span>
+					<span>•</span>
+					<span>5 min de lecture</span>
 				</div>
 			</div>
+
+			<!-- Image principale -->
+			<div class="hero-image">
+				<img src="images/image-general-ia/AI-SAAS-1.png" alt="Interface CustomGPT.ai - Chatbot IA" loading="lazy">
+			</div>
+
+			<!-- Contenu de l'article -->
+			<div class="article-content">
+				<p class="lead"><span class="emoji">🤖</span> Tu veux un assistant IA intelligent mais 100% fiable, qui ne part pas dans tous les sens ? CustomGPT est peut-être l'outil le plus sous-coté du marché.</p>
+
+				<h2>✅ Une réponse basée uniquement sur tes documents</h2>
+				<p>
+					Contrairement à ChatGPT qui répond à partir de tout l'Internet, CustomGPT se base uniquement sur les données que tu lui donnes : PDFs, URLs, pages HTML, etc.
+				</p>
+				<p>
+					Tu veux qu'il lise une notice produit, un contrat ou un guide utilisateur et réponde uniquement à partir de ça ? C'est exactement ce qu'il fait.
+				</p>
+
+				<h2>🎯 Cas d'usage concret : FAQ client automatisée</h2>
+				<p>
+					Imagine : tu déposes ton guide utilisateur (PDF), ton chatbot répond à toutes les questions des clients. Zéro hallucination, zéro mauvaise réponse.
+				</p>
+				<p>
+					Et mieux encore : tu peux l'intégrer sur ton site ou en widget dans une FAQ.
+				</p>
+
+				<h2>🧰 Fonctionnalités puissantes</h2>
+				<ul>
+					<li>Import direct de fichiers PDF, .docx ou URL</li>
+					<li>Interface personnalisable (logo, couleurs, etc.)</li>
+					<li>Historique de chat et analytics</li>
+					<li>Prêt à être embarqué sur ton site ou Notion</li>
+				</ul>
+
+				<h2>💡 Mon avis</h2>
+				<p>
+					Si tu cherches un assistant fiable, sans hallucination, pour automatiser du support, de la documentation ou même de la formation interne, CustomGPT est un bijou.
+				</p>
+
+				<div class="alert alert-info">
+					<strong><span class="emoji">💬</span> À tester :</strong> Tu peux créer un chatbot gratuitement avec 1 projet test. Va sur <a href="https://www.customgpt.ai" target="_blank">customgpt.ai</a>.
+				</div>
+
+				<!-- Bloc CTA optimisé SEO -->
+				<div class="cta-section">
+					<h3><span class="emoji">🎯</span> Enfin un chatbot IA qui ne dit que la vérité !</h3>
+					<p class="lead">
+						Fini les réponses hallucinées ! CustomGPT.ai crée un assistant IA qui répond uniquement à partir de tes documents, garantissant une précision à 100% et une fiabilité totale pour ton entreprise.
+					</p>
+					<p>
+						Transforme tes PDF, guides utilisateur et documentation en chatbot intelligent qui automatise ton support client et booste ta productivité sans risque d'erreur.
+					</p>
+					<div>
+						<a href="https://customgpt.ai/demo/?fpr=chris_ai" 
+						   target="_blank" 
+						   rel="nofollow" 
+						   class="btn btn-primary">
+							<span class="emoji">🛡️</span>
+							Essayer CustomGPT.ai gratuitement
+						</a>
+					</div>
+					<p style="margin-top: 20px; font-size: 0.9em; opacity: 0.9;">
+						<span class="emoji">🛡️</span> 100% fiable • <span class="emoji">⚡</span> Test gratuit • <span class="emoji">🎯</span> IA spécialisée • <span class="emoji">🚀</span> Automatisation garantie
+					</p>
+				</div>
+
+				<!-- Navigation -->
+				<div class="row mt-5 pt-5 border-top">
+					<div class="col-6">
+						<a href="#" class="btn btn-outline-primary">&larr; Article précédent</a>
+					</div>
+					<div class="col-6 text-end">
+						<a href="#" class="btn btn-outline-primary">Article suivant &rarr;</a>
+					</div>
+				</div>
+
+			</div>
+
 		</div>
- </section>
+	</div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <p style="color: black !important;">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. Tous droits réservés - Chris IA</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="js/bootstrap.bundle.min.js"></script>

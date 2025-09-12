@@ -49,6 +49,325 @@
   <link rel="stylesheet" href="css/style.css">
 
   <title>Crée ton propre chatbot intelligent avec CustomGPT.ai | Blog IA & SaaS</title>
+
+  <style>
+    body {
+      font-family: 'Work Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .site-nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      color: #2c3e50 !important;
+      font-weight: 700;
+      font-size: 1.5em;
+      text-decoration: none;
+    }
+    
+    .text-primary {
+      color: #667eea !important;
+    }
+    
+    .article-container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin: 20px 0;
+    }
+    
+    .article-header {
+      text-align: center;
+      margin-bottom: 40px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 30px;
+    }
+    
+    .date {
+      color: #667eea;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 0.9em;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      font-size: 2.8em;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+    
+    .post-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      color: #666;
+      margin-top: 20px;
+    }
+    
+    .author-figure {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #667eea;
+      margin: 0;
+    }
+    
+    .author-figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .hero-image {
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .hero-image img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .article-content {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #555;
+    }
+    
+    .lead {
+      font-size: 1.3em;
+      color: #2c3e50;
+      font-weight: 500;
+      margin-bottom: 30px;
+      padding: 25px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 10px;
+      border-left: 5px solid #667eea;
+    }
+    
+    h2 {
+      color: #2c3e50;
+      font-size: 1.8em;
+      margin: 40px 0 20px 0;
+      font-weight: 600;
+      position: relative;
+      padding-left: 20px;
+    }
+    
+    h2:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 2px;
+    }
+    
+    h3 {
+      color: #34495e;
+      font-size: 1.4em;
+      margin: 30px 0 15px 0;
+      font-weight: 600;
+    }
+    
+    p {
+      margin-bottom: 20px;
+    }
+    
+    ul {
+      background: #f8f9fa;
+      padding: 25px 30px;
+      border-radius: 10px;
+      border-left: 4px solid #3498db;
+      margin: 25px 0;
+    }
+    
+    ul li {
+      margin: 12px 0;
+      color: #555;
+      font-weight: 500;
+    }
+    
+    ul li:before {
+      content: '✓';
+      color: #27ae60;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    
+    ol {
+      background: #f8f9fa;
+      padding: 25px 30px;
+      border-radius: 10px;
+      border-left: 4px solid #3498db;
+      margin: 25px 0;
+    }
+    
+    ol li {
+      margin: 12px 0;
+      color: #555;
+      font-weight: 500;
+    }
+    
+    .alert {
+      padding: 20px 25px;
+      border-radius: 10px;
+      margin: 25px 0;
+      font-weight: 500;
+    }
+    
+    .alert-primary {
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+      border: 2px solid #2196f3;
+      color: #1565c0;
+    }
+    
+    .alert-warning {
+      background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+      border: 2px solid #ff9800;
+      color: #e65100;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      margin: 40px 0;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(39, 174, 96, 0.3);
+    }
+    
+    .cta-section h3 {
+      color: white;
+      margin-bottom: 25px;
+      font-size: 2em;
+    }
+    
+    .cta-section .lead {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 15px 35px;
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .btn-primary:hover {
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+    
+    .site-footer {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 30px 0;
+      border-radius: 15px;
+      margin-top: 40px;
+      text-align: center;
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .emoji {
+      font-size: 1.2em;
+      margin-right: 8px;
+    }
+    
+    a {
+      color: #667eea;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    a:hover {
+      color: #5a67d8;
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      
+      .article-container {
+        padding: 20px;
+      }
+      
+      h1 {
+        font-size: 2.2em;
+      }
+      
+      .post-meta {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .cta-section {
+        padding: 25px;
+      }
+      
+      .cta-section h3 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
  </head>
  <body>
  
@@ -63,136 +382,124 @@
 
   <nav class="site-nav">
     <div class="container">
-      <div class="menu-bg-wrap">
-        <div class="site-navigation">
-          <div class="row g-0 align-items-center">
-            <div class="col-2">
-              <a href="index.html" class="logo m-0 float-start">Les Outils IA de Chris<span class="text-primary">.</span></a>
-            </div>
-            <div class="col-8 text-center">
-              <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
-                <li class="active"><a href="index.html">Accueil</a></li>
-              </ul>
-            </div>
-            <div class="col-2 text-end">
-              <a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"><span></span></a>
-            </div>
-          </div>
+      <div class="row g-0 align-items-center">
+        <div class="col-2">
+          <a href="index.html" class="logo">Les Outils IA de Chris<span class="text-primary">.</span></a>
         </div>
+        <div class="col-8 text-center">
+          <ul style="list-style: none; margin: 0; padding: 0; display: inline-block;">
+            <li style="display: inline-block;"><a href="index.html" style="padding: 0 20px; font-weight: 600;">Accueil</a></li>
+          </ul>
+        </div>
+        <div class="col-2"></div>
       </div>
     </div>
   </nav>
 
-  <!-- Article -->
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
+  <div class="container">
+    <div class="article-container">
 
-          <!-- En-tête de l'article -->
-          <div class="mb-5">
-            <span class="date">07 Août 2025</span>
-            <h1 class="mb-4">CustomGPT.ai : Crée un chatbot intelligent avec tes propres documents</h1>
-            <div class="post-meta align-items-center text-left clearfix">
-              <figure class="author-figure mb-0 me-3 float-start">
-                <img src="images/person_1.jpg" alt="Auteur Chris" class="img-fluid">
-              </figure>
-              <span class="d-inline-block mt-1">Par <a href="#">Chris</a></span>
-              <span>&nbsp;-&nbsp; 6 min de lecture</span>
-            </div>
-          </div>
-
-          <!-- Image principale -->
-          <div class="mb-5">
-            <img src="images/image-general-ia/AI-SAAS-0.png" alt="CustomGPT.ai : assistant IA avec documents" class="img-fluid" loading="lazy">
-          </div>
-
-          <!-- Contenu de l'article -->
-          <div class="article-content">
-            <p class="lead">Et si tu pouvais discuter avec tes propres documents comme si c’était un assistant intelligent ? C’est exactement ce que permet CustomGPT.ai, un outil no-code qui transforme tes fichiers (PDF, pages web, bases de données) en chatbot personnalisés.</p>
-
-            <h2>Pourquoi utiliser CustomGPT.ai ?</h2>
-            <p>Imagine que tu es étudiant, entrepreneur ou freelance, et tu as des dizaines de documents à lire : des manuels, des conditions générales, des fiches produits, des scripts ou des rapports.</p>
-            <p>Avec CustomGPT.ai, tu n’as plus besoin de tout lire ou de chercher manuellement. Il te suffit de téléverser tes fichiers et tu peux poser tes questions comme à ChatGPT :</p>
-            <ul>
-              <li>“Quels sont les 3 points clés de ce PDF ?”</li>
-              <li>“Où est mentionné le tarif ?”</li>
-              <li>“Rédige-moi un résumé de cette page web.”</li>
-            </ul>
-
-            <h2>Comment ça marche concrètement ?</h2>
-            <ol>
-              <li>Tu crées un compte sur <strong>CustomGPT.ai</strong></li>
-              <li>Tu ajoutes tes documents (PDF, URL, fichiers CSV, etc.)</li>
-              <li>L’outil les analyse et construit un assistant IA basé sur tes données</li>
-              <li>Tu poses tes questions, et il te répond précisément, avec références</li>
-            </ol>
-
-            <h2>Une utilisation concrète : Le DocBot personnel</h2>
-            <p>Tu peux créer un “DocBot” qui connaît par cœur tous tes documents. C’est comme si tu avais un collaborateur ou un assistant qui a tout lu, tout retenu, et peut te répondre instantanément. Que ce soit pour :</p>
-            <ul>
-              <li>Préparer un pitch client</li>
-              <li>Faire une synthèse rapide d’un livre</li>
-              <li>Créer une FAQ automatique à partir de tes CGU</li>
-              <li>Répondre aux questions de tes utilisateurs en support client</li>
-            </ul>
-
-            <h2>Ce qui rend CustomGPT.ai unique</h2>
-            <ul>
-              <li>🧠 Chat avec tes propres fichiers sans coder</li>
-              <li>⚙️ Interface simple à utiliser</li>
-              <li>🔒 Tes données sont privées et sécurisées</li>
-              <li>🌍 Tu peux intégrer ton DocBot sur ton site web</li>
-            </ul>
-
-            <h2>Bonus : Gagne un temps fou</h2>
-            <p>Des étudiants ont gagné plus de 5h par semaine rien qu’en demandant à CustomGPT.ai de leur résumer leurs cours ou PDF. Des entrepreneurs l’utilisent pour automatiser leur FAQ ou transformer un PDF produit en assistant de vente.</p>
-
-            <h2>Conclusion</h2>
-            <p>Si tu veux être plus rapide, plus intelligent dans ta façon de travailler et exploiter vraiment la puissance de l’IA sans être développeur, <strong>CustomGPT.ai</strong> est l’outil parfait pour toi.</p>
-
-            <div class="alert alert-primary">
-              💡 <strong>Conseil :</strong> Commence avec un PDF que tu utilises souvent et teste ! Tu vas être bluffé.
-            </div>
-
-            <p><strong>🔗 Découvre CustomGPT.ai ici :</strong> <a href="https://www.customgpt.ai/" target="_blank">https://customgpt.ai/demo/?fpr=chris_ai</a></p>
-          </div>
-
-          <!-- Bloc CTA optimisé SEO -->
-          <div class="cta-section bg-light p-5 rounded-3 my-5">
-            <div class="text-center">
-              <h3 class="mb-4 text-primary">🚀 Prêt à révolutionner ta productivité avec l'IA ?</h3>
-              <p class="lead mb-4">
-                Imagine pouvoir discuter avec tes propres documents comme si tu parlais à un expert. CustomGPT.ai transforme tes PDF, sites web et bases de données en assistant IA intelligent qui répond instantanément à toutes tes questions.
-              </p>
-              <p class="mb-4">
-                Plus besoin de chercher dans des centaines de pages ou de lire des manuels entiers. Pose simplement tes questions et obtiens des réponses précises basées uniquement sur tes données.
-              </p>
-              <div class="d-grid gap-2 d-md-block">
-                <a href="https://customgpt.ai/demo/?fpr=chris_ai" 
-                   target="_blank" 
-                   rel="nofollow" 
-                   class="btn btn-primary btn-lg px-5 py-3">
-                  <i class="bi bi-rocket-takeoff me-2"></i>
-                  Tester CustomGPT.ai gratuitement
-                </a>
-              </div>
-              <p class="text-muted mt-3 small">
-                ⚡ Test gratuit • 🎯 IA spécialisée • 🔒 Données sécurisées • 🚀 Gain de temps garanti
-              </p>
-            </div>
-          </div>
-
+      <!-- En-tête de l'article -->
+      <div class="article-header">
+        <span class="date">07 Août 2025</span>
+        <h1>CustomGPT.ai : Crée un chatbot intelligent avec tes propres documents</h1>
+        <div class="post-meta">
+          <figure class="author-figure">
+            <img src="https://via.placeholder.com/50x50/667eea/ffffff?text=C" alt="Auteur Chris">
+          </figure>
+          <span>Par <a href="#">Chris</a></span>
+          <span>•</span>
+          <span>6 min de lecture</span>
         </div>
       </div>
+
+      <!-- Image principale -->
+      <div class="hero-image">
+        <img src="images/image-general-ia/AI-SAAS-0.png" alt="CustomGPT.ai : assistant IA avec documents" loading="lazy">
+      </div>
+
+      <!-- Contenu de l'article -->
+      <div class="article-content">
+        <p class="lead"><span class="emoji">🤖</span> Et si tu pouvais discuter avec tes propres documents comme si c'était un assistant intelligent ? C'est exactement ce que permet CustomGPT.ai, un outil no-code qui transforme tes fichiers (PDF, pages web, bases de données) en chatbot personnalisés.</p>
+
+        <h2>Pourquoi utiliser CustomGPT.ai ?</h2>
+        <p>Imagine que tu es étudiant, entrepreneur ou freelance, et tu as des dizaines de documents à lire : des manuels, des conditions générales, des fiches produits, des scripts ou des rapports.</p>
+        <p>Avec CustomGPT.ai, tu n'as plus besoin de tout lire ou de chercher manuellement. Il te suffit de téléverser tes fichiers et tu peux poser tes questions comme à ChatGPT :</p>
+        <ul>
+          <li>"Quels sont les 3 points clés de ce PDF ?"</li>
+          <li>"Où est mentionné le tarif ?"</li>
+          <li>"Rédige-moi un résumé de cette page web."</li>
+        </ul>
+
+        <h2>Comment ça marche concrètement ?</h2>
+        <ol>
+          <li>Tu crées un compte sur <strong>CustomGPT.ai</strong></li>
+          <li>Tu ajoutes tes documents (PDF, URL, fichiers CSV, etc.)</li>
+          <li>L'outil les analyse et construit un assistant IA basé sur tes données</li>
+          <li>Tu poses tes questions, et il te répond précisément, avec références</li>
+        </ol>
+
+        <h2>Une utilisation concrète : Le DocBot personnel</h2>
+        <p>Tu peux créer un "DocBot" qui connaît par cœur tous tes documents. C'est comme si tu avais un collaborateur ou un assistant qui a tout lu, tout retenu, et peut te répondre instantanément. Que ce soit pour :</p>
+        <ul>
+          <li>Préparer un pitch client</li>
+          <li>Faire une synthèse rapide d'un livre</li>
+          <li>Créer une FAQ automatique à partir de tes CGU</li>
+          <li>Répondre aux questions de tes utilisateurs en support client</li>
+        </ul>
+
+        <h2>Ce qui rend CustomGPT.ai unique</h2>
+        <ul>
+          <li><span class="emoji">🧠</span> Chat avec tes propres fichiers sans coder</li>
+          <li><span class="emoji">⚙️</span> Interface simple à utiliser</li>
+          <li><span class="emoji">🔒</span> Tes données sont privées et sécurisées</li>
+          <li><span class="emoji">🌍</span> Tu peux intégrer ton DocBot sur ton site web</li>
+        </ul>
+
+        <h2>Bonus : Gagne un temps fou</h2>
+        <p>Des étudiants ont gagné plus de 5h par semaine rien qu'en demandant à CustomGPT.ai de leur résumer leurs cours ou PDF. Des entrepreneurs l'utilisent pour automatiser leur FAQ ou transformer un PDF produit en assistant de vente.</p>
+
+        <h2>Conclusion</h2>
+        <p>Si tu veux être plus rapide, plus intelligent dans ta façon de travailler et exploiter vraiment la puissance de l'IA sans être développeur, <strong>CustomGPT.ai</strong> est l'outil parfait pour toi.</p>
+
+        <div class="alert alert-primary">
+          <span class="emoji">💡</span> <strong>Conseil :</strong> Commence avec un PDF que tu utilises souvent et teste ! Tu vas être bluffé.
+        </div>
+
+        <p><strong><span class="emoji">🔗</span> Découvre CustomGPT.ai ici :</strong> <a href="https://www.customgpt.ai/" target="_blank">https://customgpt.ai/demo/?fpr=chris_ai</a></p>
+      </div>
+
+      <!-- Bloc CTA optimisé SEO -->
+      <div class="cta-section">
+        <h3><span class="emoji">🚀</span> Prêt à révolutionner ta productivité avec l'IA ?</h3>
+        <p class="lead">
+          Imagine pouvoir discuter avec tes propres documents comme si tu parlais à un expert. CustomGPT.ai transforme tes PDF, sites web et bases de données en assistant IA intelligent qui répond instantanément à toutes tes questions.
+        </p>
+        <p>
+          Plus besoin de chercher dans des centaines de pages ou de lire des manuels entiers. Pose simplement tes questions et obtiens des réponses précises basées uniquement sur tes données.
+        </p>
+        <div>
+          <a href="https://customgpt.ai/demo/?fpr=chris_ai" 
+             target="_blank" 
+             rel="nofollow" 
+             class="btn btn-primary">
+            <span class="emoji">🚀</span>
+            Tester CustomGPT.ai gratuitement
+          </a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.9;">
+          <span class="emoji">⚡</span> Test gratuit • <span class="emoji">🎯</span> IA spécialisée • <span class="emoji">🔒</span> Données sécurisées • <span class="emoji">🚀</span> Gain de temps garanti
+        </p>
+      </div>
+
     </div>
-  </section>
+  </div>
 
   <footer class="site-footer">
     <div class="container">
       <div class="row mt-5">
         <div class="col-12 text-center">
-          <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. Tous droits réservés - Chris IA</p>
+          <p style="color: black !important;">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. Tous droits réservés - Chris IA</p>
         </div>
       </div>
     </div>
