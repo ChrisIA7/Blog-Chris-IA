@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://votre-domaine.com/sitemap.xml
+Sitemap: https://chrisia7.github.io/Blog-Chris-IA/sitemap.xml
 
 # Optimisation pour les moteurs de recherche
 Disallow: /css/
@@ -11,4 +11,7 @@ Disallow: /fonts/
 Disallow: /scss/
 
 # Autoriser l'indexation des images
-Allow: /images/ 
+Allow: /images/
+
+# Optimisation SEO
+Crawl-delay: 1 
